@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./profile.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <a href="">{{request.user}}</a>
+    <a href="{% url 'home' %}">home</a>
+    <div class="wrap">
+        <form method = 'POST' >
+            {% csrf_token %}
+            {{form}}
+            
+            <button type="submit">submit</button>
+          
+            <!-- <input type="text" placeholder="이름" name = 'name'>
+            <input type="text" placeholder="email" name = 'email'>
+            <input type="text" placeholder="학교" name = 'school'>
+            <input type="text" placeholder="연락처" name = 'contact'>
+            <input type="text" placeholder="간단한 소개" name = 'introduce'>
+            <button type="submit">SUBMIT</button>
+            <a href="edit">수정하기</a> -->
+        </form>
+        
+        
+        <div id="post">
+            
+            <h2>{{posts.name}}</h2>
+            <h2>{{posts.email}}</h2>
+            <h2>{{posts.school}}</h2>
+            <h2>{{posts.contact}}</h2>
+            <h2>{{posts.introduce}}</h2>
+            
+        </div>
+        <a href="{% url 'edit'%}">edit</a>
+        
+
+        <div class="info">
+            <div class="profile-img">프로필 이미지</div>
+            <div class="name">name</div>
+            <div class="email">email</div>
+        </div>
+        <div class="icons">
+            <div class="comments">댓글: 개</div>
+            <div class="settings"><a href="#">환경설정</a></div>
+        </div>
+        <div class="buttons">
+            <div class="profileshow">프로필</div>
+            <div class="ideashow">내 아이디어</div>
+        </div>
+        <div class="profile">
+        <div class="department">소속</div>
+        <div class="about">소개</div>
+        <div class="contact">연락처</div>
+        </div>
+        <div class="myidea">
+            <div class="idea">아이디어 있는지 확인</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% extends "postapp/base.html" %}
+{% block content %}
+
+<div class="container">
+    <h1>수정 페이지</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <h4>이름</h4><input type="text" name="name">
+        <br>
+        <h4>메일</h4><input type="text" name="email">
+        <br>
+        <h4>학교</h4><input type="text" name="school">
+        <br>
+        <h4>자기소개</h4><textarea cols=40 rows=10 name="introduce"></textarea>
+        name
+        email
+        school
+        contact
+        introduce
+        {{form.as_table}}
+        <!-- <form method = 'POST' action = "{% url 'upload' %}">
+            {% csrf_token %}
+            <input type="text" placeholder="이름" name = 'name'>
+            <input type="text" placeholder="email" name = 'email'>
+            <input type="text" placeholder="학교" name = 'school'>
+            <input type="text" placeholder="연락처" name = 'contact'>
+            <input type="text" placeholder="간단한 소개" name = 'introduce'>
+            <button type="submit">SUBMIT</button>
+        </form> -->
+        
+        <button type="submit" class="btn btn-primary">제출하기</button>
+    </form>
+</div>
+
+{% endblock %}

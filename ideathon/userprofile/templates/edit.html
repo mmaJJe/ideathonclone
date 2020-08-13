@@ -1,0 +1,51 @@
+
+{% block content %}
+
+<a href="">{{request.user}}</a>
+<a href="{% url 'home' %}">home</a>
+<div class="container">
+	<form method="POST">
+	  {% csrf_token %}
+	  <h4>name</h4>
+	  <input type="text" name="name">
+	  <br>
+      <h4>email</h4>
+      <input type="text" name="email">
+      <br>
+      <h4>school</h4>
+	  <input type="text" name="school">
+      <br>
+      <h4>contact</h4>
+	  <input type="text" name="contact">
+      <br>
+      <h4>introduce</h4>
+	  <textarea cols=40 rows=10 name="introduce"></textarea>
+	  <br>
+	  <input class="btn btn-dark" type="submit" value="수정하기">
+  </form>
+</div>
+<!-- 
+<br>
+<div class="container">
+	<form method="POST">
+	  {% csrf_token %}
+	  <h4>user</h4>
+	  <input type="text" name="user">
+	  <br>
+      <h4>email</h4>
+      <input type="text" name="email">
+      <br>
+      <h4>school</h4>
+	  <input type="text" name="school">
+      <br>
+      <h4>contact</h4>
+	  <input type="text" name="contact">
+      <br>
+      <h4>introduce</h4>
+	  <textarea cols=40 rows=10 name="introduce"></textarea>
+	  <br>
+	  <input class="btn btn-dark" type="submit" value="수정하기">
+  </form>
+</div> -->
+
+{% endblock %}
